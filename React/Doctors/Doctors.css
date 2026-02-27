@@ -1,0 +1,46 @@
+.doctors-page {
+  padding: 2rem;
+  text-align: center;
+}
+
+.doctors-page h1 {
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+.doctors-grid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.doctor-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  padding: 1rem;
+  width: 220px;
+  transition: transform 0.2s;
+}
+
+.doctor-card:hover {
+  transform: scale(1.05);
+}
+
+.doctor-card img {
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.doctor-card h2 {
+  margin: 0.5rem 0;
+  font-size: 1.25rem;
+  color: #007bff;
+}
+
+.doctor-card p {
+  font-size: 1rem;
+  color: #555;
+}
