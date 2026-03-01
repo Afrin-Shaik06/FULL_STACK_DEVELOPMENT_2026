@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartRetail - Retail Store Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">SmartRetail</div>
+            <ul class="menu" id="menu">
+                <li><a href="#" onclick="showPage('home')" class="active">Home</a></li>
+                <li><a href="#" onclick="showPage('products')">Products</a></li>
+                <li><a href="#" onclick="showPage('cart')">Cart</a></li>
+                <li><a href="#" onclick="showPage('about')">About Us</a></li>
+                <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+            </ul>
+            <div class="auth" id="auth">
+                <button onclick="showPage('login')">Login</button>
+                <button onclick="showPage('signup')">Signup</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Pages -->
+    <div id="home" class="page">
+        <div class="hero">
+            <h1>Welcome to SmartRetail</h1>
+            <p>Your one-stop shop for fresh groceries</p>
+        </div>
+        <div class="container">
+            <div class="section">
+                <h2>Featured Categories</h2>
+                <div class="categories">
+                    <div class="category">Fruits</div>
+                    <div class="category">Vegetables</div>
+                    <div class="category">Spices</div>
+                    <div class="category">Millets</div>
+                </div>
+            </div>
+            <div class="section">
+                <h2>Today's Offers</h2>
+                <div class="offers">
+                    <div class="offer">
+                        <h3>Apple - 20% Off</h3>
+                        <p>Buy 1kg get 200g free</p>
+                    </div>
+                    <div class="offer">
+                        <h3>Tomato - Buy 2 Get 1</h3>
+                        <p>Fresh and juicy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="signup" class="page hidden">
+        <div class="container">
+            <form id="signupForm">
+                <h2>Signup</h2>
+                <input type="text" id="fullName" placeholder="Full Name" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                <button type="submit">Signup</button>
+                <p class="message" id="signupMessage"></p>
+            </form>
+        </div>
+    </div>
+
+    <div id="login" class="page hidden">
+        <div class="container">
+            <form id="loginForm">
+                <h2>Login</h2>
+                <input type="email" id="loginEmail" placeholder="Email" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <button type="submit">Login</button>
+                <p class="message" id="loginMessage"></p>
+            </form>
+        </div>
+    </div>
+
+    <div id="products" class="page hidden">
+        <div class="container">
+            <h2>Products</h2>
+            <input type="text" id="search" placeholder="Search products...">
+            <select id="filter">
+                <option value="">All Categories</option>
+                <option value="Fruits">Fruits</option>
+                <option value="Vegetables">Vegetables</option>
+                <option value="Spices">Spices</option>
+                <option value="Millets">Millets</option>
+            </select>
+            <div class="products" id="productList"></div>
+        </div>
+    </div>
+
+    <div id="cart" class="page hidden">
+        <div class="container">
+            <h2>Cart</h2>
+            <div id="cartItems"></div>
+            <div class="cart-total">
+                <p>Subtotal: $<span id="subtotal">0</span></p>
+                <p>Tax: $<span id="tax">0</span></p>
+                <p>Total: $<span id="total">0</span></p>
+                <button onclick="showPage('billing')">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="billing" class="page hidden">
+        <div class="container">
+            <div class="billing">
+                <h2>Order Summary</h2>
+                <p>Subtotal: $<span id="billSubtotal">0</span></p>
+                <p>Tax: $<span id="billTax">0</span></p>
+                <p>Total: $<span id="billTotal">0</span></p>
+                <button onclick="window.print()">Print Bill</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="about" class="page hidden">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>SmartRetail is a modern retail store dedicated to providing fresh and quality products. Our mission is to make grocery shopping easy and affordable.</p>
+            <h3>Our Team</h3>
+            <p>We have a dedicated team of professionals.</p>
+            <h3>Policies</h3>
+            <p>Return policy: 7 days. Shipping: Free on orders over $50.</p>
+        </div>
+    </div>
+
+    <div id="contact" class="page hidden">
+        <div class="container">
+            <form id="contactForm">
+                <h2>Contact Us</h2>
+                <input type="text" id="contactName" placeholder="Name" required>
+                <input type="email" id="contactEmail" placeholder="Email" required>
+                <textarea id="message" placeholder="Message" required></textarea>
+                <button type="submit">Send</button>
+                <p class="message" id="contactMessage"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="section">
+                <h3>Contact Info</h3>
+                <p>Address: 123 Retail St, City, State</p>
+                <p>Email: info@smartretail.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+            <div class="section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#" onclick="showPage('home')">Home</a></li>
+                    <li><a href="#" onclick="showPage('products')">Products</a></li>
+                    <li><a href="#" onclick="showPage('about')">About Us</a></li>
+                    <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+                </ul>
+            </div>
+            <div class="section">
+                <h3>Follow Us</h3>
+                <div class="social">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2026 SmartRetail. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
