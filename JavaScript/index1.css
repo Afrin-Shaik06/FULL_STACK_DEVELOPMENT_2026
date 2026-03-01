@@ -1,0 +1,42 @@
+body{
+    background-image:url (Screenshot 2025-09-05 210435.png);
+    background-repeat: no repeat;
+    background-attachment: fixed;
+    background-position: top;
+}
+h1{
+    color:red;
+    text-align:center;
+    text-decoration:underline;
+    font-weight:bold;
+}
+h2{
+    text-decoration:overline;
+    font-weight:bolder;
+}
+h3{
+    text-decoration:line-through;
+    font-weight:lighter;
+}   
+strong{
+    font-weight:lighter;
+}
+#beginning ,#second{
+    border: solid orange;
+}
+
+.divtag{
+    border:solid rgba(189, 17, 177, 0.862);
+    color:blue;
+}
+
+div{
+    border:solid rgb(202, 38, 66);
+    color:aqua;
+}
+
+*{
+    font-family:Arial;
+    font:50px;
+    font-style: italic;
+}

@@ -1,0 +1,279 @@
+/* =====================
+   GLOBAL RESET & BOX MODEL
+===================== */
+* {
+    box-sizing: border-box;
+}
+
+/* =====================
+   BODY BACKGROUND (MATCH IMAGE)
+===================== */
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+
+    background: radial-gradient(
+        circle at top,
+        #0f172a 0%,
+        #020617 70%
+    );
+
+    color: #e5e7eb;
+}
+
+/* =====================
+   HEADER (DARK PREMIUM)
+===================== */
+.header {
+    background: linear-gradient(135deg, #020617, #020617);
+    color: #e5e7eb;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.header img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 4px solid #22d3ee;
+    margin-bottom: 15px;
+}
+
+.role {
+    font-size: 18px;
+    font-weight: bold;
+    color: #22d3ee;
+}
+
+.location,
+.contact {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* =====================
+   NAVBAR (DARK)
+===================== */
+.navbar {
+    position: sticky;
+    top: 0;
+    background: #020617;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 12px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    color: #22d3ee;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu a {
+    color: #e5e7eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-menu a:hover {
+    color: #22d3ee;
+}
+
+/* =====================
+   HAMBURGER
+===================== */
+.hamburger {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: #22d3ee;
+}
+
+/* =====================
+   MAIN CONTAINER
+===================== */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+/* =====================
+   CARD / BOX (MATCH IMAGE)
+===================== */
+.card {
+    background: linear-gradient(
+        135deg,
+        #020617 0%,
+        #0f172a 100%
+    );
+
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+
+    padding: 30px;
+    margin-bottom: 30px;
+
+    box-shadow:
+        inset 0 0 0 rgba(255,255,255,0.05),
+        0 20px 40px rgba(0,0,0,0.6);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 25px 50px rgba(0,0,0,0.8);
+}
+
+/* =====================
+   CARD TEXT
+===================== */
+.card h2 {
+    margin-top: 0;
+    color: #22d3ee;
+}
+
+.card p,
+.card li,
+.card span {
+    color: #cbd5f5;
+}
+
+/* =====================
+   GRID (SKILLS / STATS)
+===================== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.grid div {
+    background: linear-gradient(135deg, #020617, #020617);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+
+    padding: 25px;
+    text-align: center;
+    font-weight: bold;
+    color: #22d3ee;
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,0.6);
+}
+
+/* =====================
+   CONTACT FORM (ALIGNED)
+===================== */
+#contact form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr auto;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Inputs */
+#contact input,
+#contact textarea {
+    background: #020617;
+    border: 1px solid rgba(255,255,255,0.12);
+    color: #e5e7eb;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+#contact textarea {
+    resize: none;
+    height: 56px;
+}
+
+#contact input::placeholder,
+#contact textarea::placeholder {
+    color: #94a3b8;
+}
+
+/* Button */
+#contact button {
+    background: #22d3ee;
+    color: #020617;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+#contact button:hover {
+    background: #67e8f9;
+}
+
+/* =====================
+   FOOTER
+===================== */
+.footer {
+    background: #020617;
+    color: #94a3b8;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+/* =====================
+   MOBILE VIEW
+===================== */
+@media (max-width: 768px) {
+
+    /* Hamburger */
+    .hamburger {
+        display: inline;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        background: #020617;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 220px;
+        padding: 15px;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-menu.show {
+        display: flex;
+    }
+
+    /* Contact form stack */
+    #contact form {
+        grid-template-columns: 1fr;
+    }
+
+    #contact textarea {
+        height: 120px;
+    }
+
+    #contact button {
+        width: 100%;
+    }
+}
